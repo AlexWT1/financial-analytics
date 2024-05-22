@@ -42,12 +42,15 @@ public class PortfolioService(IRepository<Portfolio> repository) : IServise
         var oldInstrument = portfolio.Instruments.FirstOrDefault(x => x.Instrument == instrument.Instrument) ??
             throw new InstrumentNotFoundException(instrumentId);
 
-        if ((oldInstrument.Amount - instrument.Amount) > 0)
+        if ((oldInstrument.Amount - instrument.Amount) >= 0)
             oldInstrument.Amount -= instrument.Amount;
-        else if ((oldInstrument.Amount - instrument.Amount) == 0)
-            portfolio.Instruments.Remove(instrument);
-        else 
+        else
             throw new InstrumentAmountException(instrumentId, instrument.Amount);
+
+        if (oldInstrument.Amount == 0)
+            portfolio.Instruments.Remove(oldInstrument);
+
         await Repository.Update(portfolio, cancellationToken);
     }
+
 }

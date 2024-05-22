@@ -6,8 +6,13 @@ internal class FakeRepository<TEntity> : IRepository<TEntity> where TEntity : cl
 {
     private readonly List<TEntity> _entities = [];
 
-    public Task AddRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default) =>
-        Task.Run(() => _entities.AddRange(entities), cancellationToken);
+    //public Task AddRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default) =>
+    //    Task.Run(() => _entities.AddRange(entities), cancellationToken);
+    public Task AddRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+    {
+        _entities.AddRange(entities);
+        return Task.CompletedTask;
+    }
 
     public Task<IEnumerable<TEntity>> Get(CancellationToken cancellationToken = default) =>
         Task.FromResult(_entities.AsEnumerable());
@@ -24,5 +29,15 @@ internal class FakeRepository<TEntity> : IRepository<TEntity> where TEntity : cl
         Task.Run(() => _entities.RemoveAll(x => entities.Contains(x)));
 
     public Task UpdateRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default) =>
-        Task.CompletedTask;
+       Task.Run(() =>
+       {
+           foreach (var entity in entities)
+           {
+               var index = _entities.FindIndex(e => e.Id.Value == entity.Id.Value);
+               if (index != -1)
+               {
+                   _entities[index] = entity;
+               }
+           }
+       }, cancellationToken);
 }
