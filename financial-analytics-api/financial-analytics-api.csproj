@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>financial_analytics_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\financial-analytics-application\financial-analytics-application.csproj" />
+    <ProjectReference Include="..\financial-analytics-core\financial-analytics-core.csproj" />
+    <ProjectReference Include="..\financial-analytics-infrastructure\financial-analytics-infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

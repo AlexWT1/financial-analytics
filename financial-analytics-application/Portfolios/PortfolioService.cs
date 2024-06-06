@@ -10,7 +10,6 @@ public class PortfolioService(IRepository<Portfolio> repository) : IServise
     public async Task CreatePortfolio(string newName, CancellationToken cancellationToken = default)
     {
         var potentialCopies = await Repository.GetWithoutTracking(x => x.Name.ToLower().Equals(newName.ToLower(), StringComparison.CurrentCultureIgnoreCase), cancellationToken);
-        // throw new ArgumentException()
         if (potentialCopies.Any())
             throw new SimilarPortfolioNameException(newName);
         await Repository.Add(new() { Name = newName.Trim() }, cancellationToken);

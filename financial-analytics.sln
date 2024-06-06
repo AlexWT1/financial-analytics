@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "financial-analytics-core", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "financial-analytics-application", "financial-analytics-application\financial-analytics-application.csproj", "{BD131B22-F364-4BCB-99AE-6B4EC4E8A71B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "financial-analytics-applicatio-tests", "financial-analytics-applicatio-tests\financial-analytics-applicatio-tests.csproj", "{D06CCFE3-09A2-4500-A34A-41244CD36238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "financial-analytics-applicatio-tests", "financial-analytics-applicatio-tests\financial-analytics-applicatio-tests.csproj", "{D06CCFE3-09A2-4500-A34A-41244CD36238}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1811511E-ADF5-495A-B519-D87B3D566D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "financial-analytics-infrastructure", "financial-analytics-infrastructure\financial-analytics-infrastructure.csproj", "{90270255-8AF4-4A02-B259-46C280FC402A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "financial-analytics-api", "financial-analytics-api\financial-analytics-api.csproj", "{6094A757-2CF4-465C-84AF-70D7D5BBE403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,21 @@ Global
 		{D06CCFE3-09A2-4500-A34A-41244CD36238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06CCFE3-09A2-4500-A34A-41244CD36238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06CCFE3-09A2-4500-A34A-41244CD36238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90270255-8AF4-4A02-B259-46C280FC402A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90270255-8AF4-4A02-B259-46C280FC402A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90270255-8AF4-4A02-B259-46C280FC402A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90270255-8AF4-4A02-B259-46C280FC402A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6094A757-2CF4-465C-84AF-70D7D5BBE403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094A757-2CF4-465C-84AF-70D7D5BBE403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6094A757-2CF4-465C-84AF-70D7D5BBE403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094A757-2CF4-465C-84AF-70D7D5BBE403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90270255-8AF4-4A02-B259-46C280FC402A} = {1811511E-ADF5-495A-B519-D87B3D566D4C}
+		{6094A757-2CF4-465C-84AF-70D7D5BBE403} = {1811511E-ADF5-495A-B519-D87B3D566D4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A0CF8EC-B909-4D89-8D91-EC709FCFC3AA}
